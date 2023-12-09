@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:health_symptoms/core/constants/app_assets.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -7,11 +9,13 @@ class OnboardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(itemBuilder: (context, index) {
-        return const Column(
+        return Column(
+          
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.document_scanner_rounded),
-            Text("Get diagnostics"),
-            Text("Search and find diagnostics for your symptoms"),
+            SvgPicture.asset(AppAssets.symptomsSvg),
+            const Text("Get diagnostics"),
+            const Text("Search and find diagnostics for your symptoms"),
           ],
         );
       }),
