@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +21,14 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     emit(OnboardingLoading());
     String onboardingData =
         await rootBundle.loadString(AppAssets.onboardingItemsJson);
-    Logger().d(onboardingData);
+
+    var res = jsonDecode(onboardingData);
+
+    List<OnboardingItem> onboardingItems = (res as List)
+        .map((e) => OnboardingItem.fromJson(e as Map<String, dynamic>))
+        .toList();
+
+    emit(state.copyWith(onboardingItems: onboardingItems));
   }
 }
 
@@ -37,4 +45,20 @@ class OnboardingItem extends Equatable {
 
   @override
   List<Object?> get props => [title, description, image];
+
+  factory OnboardingItem.fromJson(Map<String, dynamic> json) {
+    return OnboardingItem(
+      title: json['title'] as String,
+      description: json['description'] as String,
+      image: json['image'] as String,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'description': description,
+      'image': image,
+    };
+  }
 }

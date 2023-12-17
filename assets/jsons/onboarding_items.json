@@ -2,24 +2,24 @@
   {
     "title": "Welcome to SymptoCare! Your Health Companion.",
     "description": "Explore symptoms, get diagnoses, and connect to healthcare professionals hassle-free. Join us for personalized care",
-    "image": "symptomsSvg"
+    "image": "symptoms_svg"
   },
 
   {
     "title": "Empower your Health Journey with SymptoCare ",
     "description": "Discover symptoms, understand diagnoses, and easily book appointments or find medications. Sign up to access all features!",
-    "image": "journeySvg"
+    "image": "journey"
   },
 
   {
     "title": "Connecting You to Better Health with SymptoCare ",
     "description": "From symptoms to solutions – find diagnoses and connect to doctors or pharmacies near you",
-    "image": "connectSvg"
+    "image": "connect_svg"
   },
 
   {
     "title": "Take Charge of Your Well-being  with SymptoCare ",
     "description": "Seamlessly manage symptoms, access diagnoses, and connect to healthcare experts. Sign up for your personal health hub!",
-    "image": "doctorSvg"
+    "image": "doctor_svg"
   }
 ]
